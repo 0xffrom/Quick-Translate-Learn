@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Quick Translate & Learn",
-  "version": "1.0",
+  "version": "1.0.1",
   "description": "Translates selected text using Google Translate and saves words for Quizlet.",
   "permissions": [
     "storage",
