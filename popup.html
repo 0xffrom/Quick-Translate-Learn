@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Learned Words</title>
+    <title>Quick Translate & Learn</title>
     <style>
         body { font-family: sans-serif; padding: 10px; }
         #words { max-height: 300px; overflow-y: auto; margin-bottom: 10px; }
@@ -11,6 +11,12 @@
     </style>
 </head>
 <body>
+<h3>Settings</h3>
+<div>
+    <label for="targetLang">Target Language:</label>
+    <input type="text" id="targetLang" placeholder="en" value="en">
+    <button id="saveLangBtn">Save</button>
+</div>
 <h3>Learned Words</h3>
 <div id="words"></div>
 <button id="exportBtn">Export for Quizlet</button>

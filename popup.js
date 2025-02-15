@@ -1,6 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const targetLangInput = document.getElementById('targetLang');
+    const saveLangBtn = document.getElementById('saveLangBtn');
     const wordsDiv = document.getElementById('words');
     const exportBtn = document.getElementById('exportBtn');
+    browser.storage.local.get({ targetLang: 'en' }).then(result => {
+        targetLangInput.value = result.targetLang;
+    });
+    saveLangBtn.addEventListener('click', function() {
+        const newLang = targetLangInput.value.trim() || 'en';
+        browser.storage.local.set({ targetLang: newLang }).then(() => {
+            alert('Target language saved: ' + newLang);
+        });
+    });
     function updateWordList() {
         browser.storage.local.get({ learnedWords: [] }).then(result => {
             const words = result.learnedWords;
