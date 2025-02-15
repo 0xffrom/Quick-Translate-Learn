@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "Quick Translate & Learn",
+  "version": "1.0",
+  "description": "Translates selected text using Google Translate and saves words for Quizlet.",
+  "permissions": [
+    "storage",
+    "*://translate.googleapis.com/"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  }
+}
